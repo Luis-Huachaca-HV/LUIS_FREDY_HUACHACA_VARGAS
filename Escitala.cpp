@@ -22,7 +22,7 @@ int main()
     Juan.mostrar_mensaje();
     */
     
-    //parte del envío
+    //parte del envÃ­o
     string mensaje;
     int clave;
     cout << "Escriba su mensaje \n";
