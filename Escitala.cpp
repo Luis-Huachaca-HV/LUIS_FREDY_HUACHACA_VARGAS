@@ -10,7 +10,7 @@ int main()
 {
 
 
-    //Aun no terminado, parte donde se usan las clases emisor y receptor.
+    //Parte donde se usan las clases emisor y receptor.
 
     Emisor Luis("", "Hola amigos", 34);
     Luis.ocultar_mensaje(Luis.get_clave());
@@ -30,13 +30,17 @@ int main()
     cout << "Ingrese su clave, debe ser un numero de dos cifras y la multiplicacion entre ella debe ser mayor a: " << mensaje.size();
     cin >> clave;
     int espacios_vacios = ((clave % 10) * (clave / 10)) - mensaje.size();
+    
+    //aquí se llenan los espacios vacios con un '_'
     for (int i = 0; i < espacios_vacios; i++)
         mensaje.push_back('_');
 
 
 
-    string mensaje_oc;//cambie de vector
+    string mensaje_oc;
     int e = 0;
+
+    //encriptación de mensaje
 
     for (int i = 0; i < clave % 10; i++) {
         e = i;
@@ -48,7 +52,7 @@ int main()
     }
 
     for (int i = 0; i < mensaje_oc.size(); i++) {
-        cout << mensaje_oc[i] << " ";//cambie de vector, índice
+        cout << mensaje_oc[i] << " ";
     }
 
     cout << endl;
