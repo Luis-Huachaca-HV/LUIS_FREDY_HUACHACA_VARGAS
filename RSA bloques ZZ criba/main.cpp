@@ -28,7 +28,7 @@ int Module(int Div, int d){
 int main()
 {
    ZZ a, b, c, p , q,N,fiN,d,e;
-   //ME FALTA COMPLETAR LAS CLAVES EN CRIBA, de ahi debo hacer la exponenciacion modular
+   
     a = ZZ(3);
 
     b=ZZ(1003);
