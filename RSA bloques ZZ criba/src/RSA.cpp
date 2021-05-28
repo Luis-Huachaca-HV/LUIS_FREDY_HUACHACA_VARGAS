@@ -18,7 +18,7 @@ RSA::RSA()
     N = p*q;
     fiN = (p-1)*(q-1);
     d = InversaMultiplicativa(e,fiN);
-    cout <<endl << p << " " << q << " " <<  N<< " " << e<< " " << d<< endl;
+    cout <<endl << "p: " << p << " q: " << q << " N: " <<  N << " fiN: " << fiN << " e: " << e<< " d: " << d<< endl;
     //ctor
 }
 RSA::RSA(ZZ _N, ZZ _e, ZZ _d){
@@ -71,7 +71,7 @@ void RSA::insDatos(string Nombre, ZZ N, ZZ e){
     string b;
     a = numberToString(N);
     b = numberToString(e);
-    cout << a << " " << b << endl;
+
     myFile.open("directorio_publico.txt",ios::out);
     if(myFile.is_open()){
         myFile << Nombre + '\n';
@@ -123,7 +123,7 @@ string RSA::vectorPosiciones(string mensaje){
         numPosiciones += ancho;
 
     }
-    cout << "num posiciones" << endl;
+    cout << endl << " arr de vector en bloques: " << endl;
     cout << numPosiciones << endl;
     vector <string> vectorBloques;
     for(int i = 0; i < numPosiciones.size(); i+= anchoN -1){
@@ -145,7 +145,7 @@ string RSA::vectorPosiciones(string mensaje){
         }
         vectorBloquesZZ += nVal;
     }
-    cout << vectorBloquesZZ << endl;
+    cout << endl << "bloques del vector con 0 aumentado: " << vectorBloquesZZ << endl;
     return vectorBloquesZZ;
 }
 
@@ -170,7 +170,7 @@ string RSA::descifrar(string cifrado, ZZ N, ZZ d){
         }
         vectorBloquesS += nVal;
     }
-    cout << vectorBloquesS << " ";
+    cout << endl << " vector en bloques y con 0 " <<vectorBloquesS << endl;
 
     int significativo = abc.size()- 1;//26
     stringstream buffer;
@@ -186,7 +186,7 @@ string RSA::descifrar(string cifrado, ZZ N, ZZ d){
         pos = stringToNumberr(vectorBloquesS.substr(i,significativo));
         descifrado += abc[pos];
     }
-    cout << descifrado << endl;
+    cout << endl << " mensaje descifrado:  " <<descifrado << endl;
 
 
 }

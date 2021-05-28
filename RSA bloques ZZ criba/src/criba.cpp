@@ -63,7 +63,10 @@ vector <ZZ> criba::primerGenerator(ZZ end_num){
     for(;z < arr_primos.size(); z++){
         cout << arr_primos.at(z) << " ";
     }
-    cout << "prube";
+
+    cout << endl << "Array de primos completado" << endl;
+
+
     return arr_primos;
 }
 
@@ -83,22 +86,17 @@ vector <ZZ> criba::obtenerArrPrimos(){
 
     }
 
-    //cout << primer_arreglo.size();
-    //aca sacara masomenos la raiz del rango de claves
+
     ZZ mitad_primo;
     mitad_primo = 1;
     while(expo(mitad_primo,a) < primer_arreglo.back()){
         mitad_primo++;
     }
-    //prime generator
-
-    //vector <ZZ> segdo_arreglo;
-    //segdo_arreglo = primer_generator(mitad_primo);
 
     //----------------------------------------------------
     vector <ZZ> arr_primos;
     arr_primos = primerGenerator(mitad_primo);
-    cout << "declaracion arr prmos" << endl;
+
 
 
     for(int it_arr_primos = 1;it_arr_primos < arr_primos.size(); it_arr_primos++){
@@ -112,7 +110,7 @@ vector <ZZ> criba::obtenerArrPrimos(){
         }
 
     }
-    cout << "impresion del arreglo con claves en primo" << endl;
+    cout << endl << " impresion del arreglo con claves en primo " << endl;
 
     for(int i = 0; i < primer_arreglo.size(); i++){
         cout << primer_arreglo.at(i) << " ";
